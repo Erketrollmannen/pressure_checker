@@ -4,6 +4,5 @@ pandas
 requests
 requests-kerberos
 certifi
-tables
 tagreader
 matplotlib
