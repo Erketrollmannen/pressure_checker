@@ -6,3 +6,4 @@ requests-kerberos
 certify
 tables
 tagreader
+matplotlib
