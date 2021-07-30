@@ -1,0 +1,8 @@
+# Req
+numpy
+pandas
+requests
+requests-kerberos
+certify
+tables
+tagreader
