@@ -77,7 +77,10 @@ def get_start_end():
 	end = end.split(" ")[0]
 	end_split = end.split("-")
 	tmp = "0" + str(int(end_split[1]) - 1) if end_split[1] != "12" else "1"
-	start = f"{end_split[0]}-{tmp}-{end_split[2]}"
+	if tmp == "12":
+		start = f"{end_split[0]-{tmp}-{str(int(end_split[2])-1)}"
+	else:
+		start = f"{end_split[0]}-{tmp}-{end_split[2]}"
 	return start, end
 
 def connect_to_aspen():
