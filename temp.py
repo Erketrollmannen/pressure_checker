@@ -85,6 +85,7 @@ def get_start_end():
 	return start, end
 
 def connect_to_aspen():
+	print("Venter på svar frå aspen")
 	API = "aspenone"
 	sources = tagreader.list_sources(API)
 	if "MO-IP21Y" not in sources:
