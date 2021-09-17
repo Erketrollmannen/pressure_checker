@@ -76,11 +76,16 @@ def get_start_end():
 	end = str(datetime.datetime.now())
 	end = end.split(" ")[0]
 	end_split = end.split("-")
-	tmp = "0" + str(int(end_split[1]) - 1) if end_split[1] != "12" else "1"
-	start = f"{end_split[0]}-{tmp}-{end_split[2]}"
+	tmp = "0" + str(int(end_split[1]) - 1) if end_split[1] != "01" else "12"
+	if tmp == "12":
+		start = f"{str(int(end_split[0])-1)}-{tmp}-{end_split[2]}"
+	else:
+		start = f"{end_split[0]}-{tmp}-{end_split[2]}"
+	
 	return start, end
 
 def connect_to_aspen():
+	print("Venter på svar frå aspen")
 	API = "aspenone"
 	sources = tagreader.list_sources(API)
 	if "MO-IP21Y" not in sources:

@@ -1,8 +1,5 @@
 # Req
 numpy
 pandas
-requests
-requests-kerberos
-certifi
 tagreader
 matplotlib
