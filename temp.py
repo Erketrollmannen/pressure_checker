@@ -160,7 +160,7 @@ def get_tag_list():
 				print("Du må skrive eit tall, eller tall separert med mellomrom")
 				continue
 			try:
-				t = [MSB_TAGS[i] for i in index]
+				t = [MSA_TAGS[i] for i in index]
 			except IndexError:
 				print("Godtar ikkje høgere tall enn 13.\n")
 				continue
