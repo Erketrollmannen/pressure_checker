@@ -155,7 +155,8 @@ def get_tag_list():
 			if inn == "":
 				return MSA_TAGS, None
 			elif inn.lower() == "b":
-				get_tag_list()
+				msa, msb = get_tag_list()
+                return msa, msb
 			elif inn.lower() == "c":
 				os._exit(0)
 			split = inn.split()
@@ -182,7 +183,8 @@ def get_tag_list():
 			if inn == "":
 				return MSB_TAGS, None
 			elif inn.lower() == "b":
-				get_tag_list()
+				msa, msb = get_tag_list()
+                return msa, msb
 			elif inn.lower() == "c":
 				os._exit(0)
 			split = inn.split()
