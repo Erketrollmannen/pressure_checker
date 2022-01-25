@@ -73,20 +73,8 @@ def search_tag(tags):
 	return lop
 
 def get_start_end():
-    end = str(datetime.datetime.now())
-    end = end.split(" ")[0]
-    end_split = end.split("-")
-    int_mnd = int(end_split[1])
-    if int_mnd >= 10:
-        tmp = str(int_mnd - 1)
-    else:
-        tmp = "0" + str(int_mnd - 1) if end_split[1] != "01" else "12"
-
-    if tmp == "12":
-        start = f"{str(int(end_split[0])-1)}-{tmp}-{end_split[2]}"
-    else:
-        start = f"{end_split[0]}-{tmp}-{end_split[2]}"
-    
+    end = datetime.date.today()
+    start = end + datetime.timedelta(days=-30)
     return start, end
 
 def connect_to_aspen():
