@@ -75,7 +75,7 @@ def search_tag(tags):
 def get_start_end():
     end = datetime.date.today()
     start = end + datetime.timedelta(days=-30)
-    return start, end
+    return str(start), str(end)
 
 def connect_to_aspen():
 	print("Venter på svar frå aspen")
