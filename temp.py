@@ -87,6 +87,7 @@ def connect_to_aspen():
 	else:
 		source = "MO-IP21Y"
 	client = tagreader.IMSClient(source, API)
+	client.cache = None
 	client.connect()
 	return client
 
@@ -194,6 +195,7 @@ def get_tag_list():
 		return MSA_TAGS, MSB_TAGS
 
 if __name__ == "__main__":
+
 	style.use("ggplot")
 	client = connect_to_aspen()
 	start, end = get_start_end()
