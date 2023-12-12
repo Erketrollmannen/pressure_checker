@@ -32,8 +32,8 @@ class Lop:
 			self.temp_df[col][self.temp_df[col] < 0] = np.nan
 		self.temp_df.dropna(inplace=True)
 		self.temp_df["diff"] = self.temp_df[self.A] - self.temp_df[self.B]
-		self.temp_df["min"] = -0.2
-		self.temp_df["max"] = 0.2
+		self.temp_df["min"] = -0.007
+		self.temp_df["max"] = 0.007
 		self.has_df = True
 
 	def get_flow_df(self):
@@ -43,8 +43,8 @@ class Lop:
 		
 	def plot(self, flow_list):
 		self.main_ax = plt.subplot2grid((6,1), (0,0), rowspan=5, colspan=1)
-		self.main_ax.set_title(f"temperatur differanse {self.A}, {self.B}")
-		self.main_ax.set_ylim([-0.5, 0.5])
+		self.main_ax.set_title(f"pressure differanse {self.A}, {self.B}")
+		self.main_ax.set_ylim([-0.025, 0.025])
 		self.flow_ax = plt.subplot2grid((6,1), (5,0), rowspan=1, colspan=1, sharex=self.main_ax)
 		self.main_ax.plot(self.temp_df["diff"])
 		self.main_ax.plot(self.temp_df["min"], linestyle="dotted")
@@ -113,24 +113,24 @@ def yeet(tags):
 
 def get_tag_list():
 	os.system("cls")
-	print("Måntleg temp sjekk")
+	print("Arbeidspunktkontroll trykk sjekk")
 	inn = input("1. MSA\n2. MSB\nEnter for alle tag\nc for å avslutte\n")
 
-	MSA_TAGS = [["80-TI-312A", "80-TI-312B", "80-FI-312N"], ["80-TI-322A", "80-TI-322B", "80-FI-322N"],
-				["80-TI-332A", "80-TI-332B", "80-FI-332N"], ["80-TI-342A", "80-TI-342B", "80-FI-342N"],
-				["80-TI-352A", "80-TI-352B", "80-FI-352N"], ["80-TI-362A", "80-TI-362B", "80-FI-362N"],
-				["80-TI-372A", "80-TI-372B", "80-FI-372N"], ["80-TI-382A", "80-TI-382B", "80-FI-382N"],
-				["80-TI-392A", "80-TI-392B", "80-FI-392N"], ["80-TI-402A", "80-TI-402B", "80-FI-402N"],
-				["80-TI-412A", "80-TI-412B", "80-FI-412N"], ["80-TI-451A", "80-TI-451B"],
-				["80-TI-452A", "80-TI-452B"]]
+	MSA_TAGS = [["80-PI-316A", "80-PI-316B", "80-FI-312N"], ["80-PI-326A", "80-PI-326B", "80-FI-322N"],
+				["80-PI-336A", "80-PI-336B", "80-FI-332N"], ["80-PI-346A", "80-PI-346B", "80-FI-342N"],
+				["80-PI-356A", "80-PI-356B", "80-FI-352N"], ["80-PI-366A", "80-PI-366B", "80-FI-362N"],
+				["80-PI-376A", "80-PI-376B", "80-FI-372N"], ["80-PI-386A", "80-PI-386B", "80-FI-382N"],
+				["80-PI-396A", "80-PI-396B", "80-FI-392N"], ["80-PI-406A", "80-PI-406B", "80-FI-402N"],
+				["80-PI-416A", "80-PI-416B", "80-FI-412N"], ["80-PI-455A", "80-PI-455B"],
+				["80-PI-456A", "80-PI-456B"]]
 
-	MSB_TAGS = [["80-TI-512A", "80-TI-512B", "80-FI-512N"], ["80-TI-522A", "80-TI-522B", "80-FI-522N"],
-				["80-TI-532A", "80-TI-532B", "80-FI-532N"], ["80-TI-542A", "80-TI-542B", "80-FI-542N"],
-				["80-TI-552A", "80-TI-552B", "80-FI-552N"], ["80-TI-562A", "80-TI-562B", "80-FI-562N"],
-				["80-TI-572A", "80-TI-572B", "80-FI-572N"], ["80-TI-582A", "80-TI-582B", "80-FI-582N"],
-				["80-TI-592A", "80-TI-592B", "80-FI-592N"], ["80-TI-602A", "80-TI-602B", "80-FI-602N"],
-				["80-TI-612A", "80-TI-612B", "80-FI-612N"], ["80-TI-651A", "80-TI-651B"],
-				["80-TI-652A", "80-TI-652B"]]
+	MSB_TAGS = [["80-PI-516A", "80-PI-516B", "80-FI-512N"], ["80-PI-526A", "80-PI-526B", "80-FI-522N"],
+				["80-PI-536A", "80-PI-536B", "80-FI-532N"], ["80-PI-546A", "80-PI-546B", "80-FI-542N"],
+				["80-PI-556A", "80-PI-556B", "80-FI-552N"], ["80-PI-566A", "80-PI-566B", "80-FI-562N"],
+				["80-PI-576A", "80-PI-576B", "80-FI-572N"], ["80-PI-586A", "80-PI-586B", "80-FI-582N"],
+				["80-PI-596A", "80-PI-596B", "80-FI-592N"], ["80-PI-606A", "80-PI-606B", "80-FI-602N"],
+				["80-PI-616A", "80-PI-616B", "80-FI-612N"], ["80-PI-655A", "80-PI-655B"],
+				["80-PI-656A", "80-PI-656B"]]
 		
 
 	if inn.lower() == "c":
