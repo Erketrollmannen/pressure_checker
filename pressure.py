@@ -32,8 +32,8 @@ class Lop:
 			self.temp_df[col][self.temp_df[col] < 0] = np.nan
 		self.temp_df.dropna(inplace=True)
 		self.temp_df["diff"] = self.temp_df[self.A] - self.temp_df[self.B]
-		self.temp_df["min"] = -0.007
-		self.temp_df["max"] = 0.007
+		self.temp_df["min"] = -0.07
+		self.temp_df["max"] = 0.07
 		self.has_df = True
 
 	def get_flow_df(self):
@@ -44,7 +44,7 @@ class Lop:
 	def plot(self, flow_list):
 		self.main_ax = plt.subplot2grid((6,1), (0,0), rowspan=5, colspan=1)
 		self.main_ax.set_title(f"pressure differanse {self.A}, {self.B}")
-		self.main_ax.set_ylim([-0.025, 0.025])
+		self.main_ax.set_ylim([-0.1, 0.1])
 		self.flow_ax = plt.subplot2grid((6,1), (5,0), rowspan=1, colspan=1, sharex=self.main_ax)
 		self.main_ax.plot(self.temp_df["diff"])
 		self.main_ax.plot(self.temp_df["min"], linestyle="dotted")
